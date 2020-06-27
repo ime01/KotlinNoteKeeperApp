@@ -25,13 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         notePosition = savedInstanceState?.getInt(NOTE_POSITION, POSITION_NOT_SET)?: intent.getIntExtra(NOTE_POSITION, POSITION_NOT_SET)
 
-        if (notePosition!= POSITION_NOT_SET)
+        if (notePosition!= POSITION_NOT_SET) {
 
             diaplayNote()
+        }
             else{
                 DataManager.notes.add(NoteInfo())
-            notePosition = DataManager.notes.lastIndex
-        }
+                notePosition = DataManager.notes.lastIndex }
 
     }
 
