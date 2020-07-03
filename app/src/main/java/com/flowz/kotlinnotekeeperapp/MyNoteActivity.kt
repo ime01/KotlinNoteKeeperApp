@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.testing.*
+import kotlinx.android.synthetic.main.trial.*
 
 
 class MyNoteActivity : AppCompatActivity() {
@@ -19,11 +20,11 @@ class MyNoteActivity : AppCompatActivity() {
 
 //        val list = listOf<String>("john", "mike", "victor")
 
-
-            fab.setOnClickListener { view ->
-            val activityIntent = Intent(this, MainActivity::class.java)
-            startActivity(activityIntent)
-        }
+//
+//            fab.setOnClickListener { view ->
+//            val activityIntent = Intent(this, MainActivity::class.java)
+//            startActivity(activityIntent)
+//        }
 
 
 //        Toast.makeText(this, "helo"+list, Toast.LENGTH_LONG).show()

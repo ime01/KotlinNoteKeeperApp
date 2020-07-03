@@ -13,7 +13,7 @@
         <activity
             android:name=".MainActivity"
             android:label="Edit Note"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MyNoteActivity"
             android:label="Note Keeper">

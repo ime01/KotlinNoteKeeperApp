@@ -1,6 +1,7 @@
 package com.flowz.kotlinnotekeeperapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -10,6 +11,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private val tag = "MainActivity"
 
     private var notePosition = POSITION_NOT_SET
 
@@ -30,9 +33,13 @@ class MainActivity : AppCompatActivity() {
             diaplayNote()
         }
             else{
-                DataManager.notes.add(NoteInfo())
-                notePosition = DataManager.notes.lastIndex }
+            createNewNote()
+        }
+    }
 
+    private fun createNewNote() {
+        DataManager.notes.add(NoteInfo())
+        notePosition = DataManager.notes.lastIndex
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -43,8 +50,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun diaplayNote() {
         val note = DataManager.notes[notePosition]
+        Log.e(tag, "Invalid note position $notePosition, max valid position ${DataManager.notes.lastIndex}")
         textNoteTitle.setText(note.title)
         textNoteText.setText(note.text)
+
+        Log.i(tag,"Displaying note for position $notePosition")
 
         val coursePosition = DataManager.courses.values.indexOf(note.course)
 
